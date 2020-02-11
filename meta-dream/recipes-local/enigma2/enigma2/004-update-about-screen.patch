@@ -1,0 +1,42 @@
+Get rid of flash type, version, revision and VisionModule since we don't have versioninfo.bb
+and we don't use a revision number.
+Also we known it's a normal image and not a small flash image.
+Use the old way to display version number (after image name).
+Add 'unofficial'  to image name to make it clear it's not an official Open Vision image.
+Restore time of update.
+
+diff --git a/lib/python/Screens/About.py b/lib/python/Screens/About.py
+index f4e24db0e..9a5d65e3c 100644
+--- a/lib/python/Screens/About.py
++++ b/lib/python/Screens/About.py
+@@ -44,7 +44,6 @@ class About(Screen):
+ 		AboutText += _("CPU architecture: ") + about.getCPUArch() + "\n"
+ 		if boxbranding.getImageFPU() != "":
+ 			AboutText += _("FPU: ") + boxbranding.getImageFPU() + "\n"
+-		AboutText += _("Image architecture: ") + boxbranding.getImageArch() + "\n"
+ 
+ 		if boxbranding.getImageArch() == "aarch64":
+ 			if boxbranding.getHaveMultiLib() == "True":
+@@ -50,17 +49,11 @@ class About(Screen):
+ 			else:
+ 				AboutText += _("MultiLib: ") + _("No") + "\n"
+ 
+-		AboutText += _("Flash type: ") + about.getFlashType() + "\n"
+-
+-		AboutText += "\n" + _("Image: ") + about.getImageTypeString() + "\n"
+-		AboutText += _("Feed URL: ") + boxbranding.getFeedsUrl() + "\n"
+-
+-		AboutText += _("Open Vision version: ") + about.getVisionVersion() + "\n"
+-		AboutText += _("Open Vision revision: ") + about.getVisionRevision() + "\n"
+-		AboutText += _("Open Vision module: ") + about.getVisionModule() + "\n"
+-
++		AboutText += _("Image: ") + "Open Vision\n"
+ 		AboutText += _("Build date: ") + about.getBuildDateString() + "\n"
+-		AboutText += _("Last update: ") + about.getUpdateDateString() + "\n"
++		ImageVersion = _("Last update: ") + about.getImageVersionString()
++		self["ImageVersion"] = StaticText(ImageVersion)
++		AboutText += ImageVersion + "\n"
+ 
+ 		# [WanWizard] Removed until we find a reliable way to determine the installation date
+ 		# AboutText += _("Installed: ") + about.getFlashDateString() + "\n"
+
