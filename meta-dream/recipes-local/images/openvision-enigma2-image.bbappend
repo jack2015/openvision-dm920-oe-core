@@ -1,7 +1,9 @@
 IMAGE_INSTALL_remove = "distro-feed-configs"
+
 IMAGE_INSTALL_append += " \
 	bitratecalc \
 	"
+
 ENIGMA2_PLUGINS = " \
 	enigma2-plugin-extensions-audiosync \
 	enigma2-plugin-extensions-autobackup \
@@ -22,7 +24,6 @@ ENIGMA2_PLUGINS = " \
 	enigma2-plugin-extensions-ppanel \
 	enigma2-plugin-extensions-systemtools \
 	enigma2-plugin-extensions-tmbd \
-	${@bb.utils.contains_any("MACHINE", "dm900 dm920", "enigma2-plugin-extensions-e2iplayer", "", d)} \
 	${@bb.utils.contains_any("MACHINE", "dm900 dm920", "enigma2-plugin-extensions-youtube", "", d)} \
 	${@bb.utils.contains("MACHINE", "dm900", "enigma2-plugin-softcams-oscam-dm900", "", d)} \
 	${@bb.utils.contains("MACHINE", "dm920", "enigma2-plugin-softcams-oscam-dm920", "", d)} \
