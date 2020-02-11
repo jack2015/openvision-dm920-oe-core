@@ -34,7 +34,6 @@ RDEPENDS_${PN} = " \
 	python-pycurl \
 	rtmpdump \
 	uchardet \
-	wget \
 	"
 
 RDEPENDS_{PN}-src = "${PN}"
