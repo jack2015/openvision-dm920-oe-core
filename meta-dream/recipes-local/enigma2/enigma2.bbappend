@@ -1,4 +1,4 @@
-FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
+#FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
 
 SRC_URI = "git://github.com/jack2015/enigma2-openvision.git;branch=develop \
 			file://002-dont-remove-e2iplayer.patch \
