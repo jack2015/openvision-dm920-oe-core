@@ -2,21 +2,20 @@ Experimental build environment for dreambox 920 based on Open Vision (unofficial
 
 https://github.com/OpenVisionE2/openvision-oe
 
-In comparison to official Open Vision this build environment has:<br>
 -Submodules bitbake, openembedded-core and meta-openembedded from master branch,<br>
-&nbsp;with git snapshot of January 24th, 2019.<br>
--GCC 9.2.0<br>
--Glibc 2.30<br>
+&nbsp;with git snapshot of March 14th, 2020.<br>
+-GCC 9.3.0<br>
+-Glibc 2.31<br>
 -GStreamer 1.17.0.1<br>
 -Python 2.7.17<br>
 -OpenSSL 1.1.1d<br>
--Busybox 1.31.0<br>
+-Busybox 1.31.1<br>
 and more.<br>
 <br>
 <br>
 Feel free to send pull-request.
 
-Tested on Ubuntu 19.10.
+Tested with Ubuntu 20.04.
 <br>
 <br>
 Dependencies:
@@ -31,7 +30,7 @@ cd openvision-dm920-oe-core
 
 make image
 ```
-When the build is finished, the image openvision-enigma2-9.1-dm920.rootfs.tar.bz2 is in the:
+When the build is finished, the image openvision-enigma2-9.3-dm920.rootfs.tar.bz2 is in the:
 ```
 build/tmp/deploy/images/dm920/
 ```
@@ -52,7 +51,7 @@ Create symlinks to your build-environment:
 ```
 cd /var/www/html
 
-sudo mkdir feeds;cd feeds;sudo mkdir openvision-9.2;cd openvision-9.2;
+sudo mkdir feeds;cd feeds;sudo mkdir openvision-9.3;cd openvision-9.3;
 
 sudo ln -s /home/<your username>/openvision-dm920-oe-core/build/tmp/deploy/ipk/dm920 dm920 
 
