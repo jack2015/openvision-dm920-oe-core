@@ -7,6 +7,7 @@ PV = "3"
 require conf/license/openpli-gplv2.inc
 
 SRC_URI = "file://progress"
+
 S = "${WORKDIR}"
 
 do_install () {

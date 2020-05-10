@@ -1,9 +1,12 @@
 # dreambox-arm.inc
 
+BOX_BRAND = "dreambox"
+
 MTD_ROOTFS = "mmcblk0p2"
 MTD_KERNEL = "mmcblk0p1"
 KERNEL_FILE = "kernel.bin"
 ROOTFS_FILE = "rootfs.tar.bz2"
+MTD_BLACK  = "mmcblk0"
 
 DISTRO_FEATURES_GFX_mipsel ?= " opengl"
 
@@ -18,7 +21,7 @@ DVBSKYPROVIDER = "kernel"
 
 GLIBC_EXTRA_OECONF = "--with-tls --with-__thread"
 
-DVBMEDIASINK_CONFIG = "--with-machine=${MACHINE} --with-pcm --with-wma --with-wmv --with-dts=no --with-dtsdownmix --with-eac3 --with-vb6 --with-vb8 --with-vb9 --with-spark --with-h265"
+DVBMEDIASINK_CONFIG = "--with-pcm --with-wma --with-wmv --with-dts=no --with-dtsdownmix --with-eac3 --with-vb6 --with-vb8 --with-vb9 --with-spark --with-h265"
 
 require conf/machine/include/soc-family.inc
 require conf/machine/include/tune-cortexa15.inc
