@@ -4,7 +4,7 @@ HOMEPAGE = "http://videolan.org"
 LICENSE = "GPLv2"
 LIC_FILES_CHKSUM="file://COPYING;md5=4fbd65380cdd255951079008b364516c"
 
-SRC_URI = "git://code.videolan.org/videolan/libudfread.git;branch=master;protocol=http"
+SRC_URI = "git://github.com/jack2015/libudfread.git;branch=master;protocol=git"
 
 inherit gitpkgv autotools-brokensep pkgconfig
 

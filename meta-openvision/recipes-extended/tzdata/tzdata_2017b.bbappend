@@ -1,4 +1,4 @@
-DEFAULT_TIMEZONE = "CET"
+DEFAULT_TIMEZONE = "Europe/Moscow"
 
 FILES_${PN} = "                                          \
                 ${datadir}/zoneinfo/Africa/Casablanca    \

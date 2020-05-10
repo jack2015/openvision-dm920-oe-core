@@ -3,21 +3,20 @@ DESCRIPTION = "DVB-T dongles based on the Realtek RTL2832U can be used as a chea
 MAINTAINER = "http://osmocom.org/projects/sdr"
 LICENSE = "GPLv2"
 LIC_FILES_CHKSUM = "file://COPYING;md5=751419260aa954499f7abaabaa882bbe"
- 
-inherit gitpkgv
- 
+
+inherit gitpkgv cmake
+
 PV = "1.0+git${SRCPV}"
 PKGV = "1.0+git${GITPKGV}"
-PR = "r1"
- 
-SRC_URI = "git://git.osmocom.org/rtl-sdr;protocol=https"
 
-SRCREV = "${AUTOREV}"
- 
+SRC_URI = "git://github.com/osmocom/rtl-sdr.git;protocol=git"
+
+SRCREV = "f427883320cbb65e254644717f5d7963e37bbd1d"
+
 S = "${WORKDIR}/git"
- 
+
 DEPENDS = "libusb1"
- 
-inherit cmake
- 
+
+EXTRA_OECMAKE += " -DLIB_INSTALL_DIR=${libdir}"
+
 EXTRA_OECONF = "--enable-driver-detach"
