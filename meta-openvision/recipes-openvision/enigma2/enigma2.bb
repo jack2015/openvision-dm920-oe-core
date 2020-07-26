@@ -111,7 +111,7 @@ GITHUB_URI ?= "git://github.com"
 SRC_URI = " ${GITHUB_URI}/OpenVisionE2/enigma2-openvision.git;branch=${ENIGMA2_BRANCH} \
 			file://001-set-default-debug-level-at-4.patch \
 			file://002-dont-remove-e2iplayer.patch \
-			file://005-set-box-brand-to-dreambox.patch \
+			file://003-restore-last-update-date-time.patch \
 			file://006-make-PLi-FullNightHD-skin-default.patch \
 			file://012-set-default-hide-channel-list-radio.patch \
 			"
@@ -140,7 +140,7 @@ def get_crashaddr(d):
 EXTRA_OECONF = "\
 	--with-libsdl=no --with-boxtype=${MACHINE} \
 	--enable-dependency-tracking \
-	--with-colorlcd400 \
+	--with-${DISPLAY_TYPE} \
 	--with-oever="10.1" \
 	ac_cv_prog_c_openmp=-fopenmp \
 	${@get_crashaddr(d)} \
