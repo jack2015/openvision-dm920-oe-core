@@ -118,7 +118,6 @@ OPTIONAL_BSP_ENIGMA2_PACKAGES ?= ""
 ENIGMA2_OPTIONAL = " \
 	channelsettings-enigma2-meta \
 	dvb-usb-drivers-meta \
-	enigma2-pliplugins \
 	enigma2-plugin-drivers-usbserial \
 	enigma2-plugin-extensions-backupsuite \
 	enigma2-plugin-extensions-blurayplayer \
@@ -140,6 +139,8 @@ ENIGMA2_OPTIONAL = " \
 	enigma2-plugin-extensions-tmbd \
 	enigma2-plugin-extensions-vcs \
 	enigma2-plugin-extensions-xmodem \
+	enigma2-plugin-extensions-xstreamity \
+	enigma2-plugin-extensions-xtraevent \
 	enigma2-plugin-extensions-youtube \
 	enigma2-plugin-extensions-youtube-dl \
 	enigma2-plugin-security-firewall \
